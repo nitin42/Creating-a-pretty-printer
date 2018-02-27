@@ -30,7 +30,7 @@ operator => "===" | "!==" | "<" | "<=" | ">" | ">=" | "+"  | "-"  | "*" | "/"
 
 Rules are called **productions** because they produce the strings.
 
-These productions rules are represented as nodes in the abstract syntax tree. We will be manipulating these notes in the later sections.
+These productions rules are represented as nodes in the abstract syntax tree. We will be manipulating these nodes in the later sections.
 
 That's it. We only require these features in the code that we will use in the tutorial so we won't extend this grammar further.
 
