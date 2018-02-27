@@ -97,3 +97,17 @@ const instance = new Printer()
 instance.main() // (* 12 (- 10 20))
 
 ```
+
+YEAH! We have now created a pretty printer. I hope you've learned some cool things about working at a lower abstraction where we learned about -
+
+* Visitor pattern
+
+* What is pretty printing
+
+* Language grammar
+
+* Traversing the syntax tree
+
+Let me know if you've any doubts. If you liked reading this tutorial, then ⭐ this repo or share it on the Twitter. I am at [@NTulswani](https://twitter.com/NTulswani).
+
+Thanks for reading the tutorial!
