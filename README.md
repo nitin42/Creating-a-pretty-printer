@@ -30,9 +30,7 @@ We will be covering:
 
 * [Defining expression class for each node in our tree](./expression.md)
 
-* [Creating a helper class using inheritance to traverse each node in our tree](./printer.md)
-
-* [Render the tree to display a pretty printed string of source code](./output.md)
+* [Creating a helper class using inheritance to traverse each node in our tree and pretty print the node](./printer.md)
 
 I promise not to bore you with the language theory around formal grammars, Chomsky hierarchy, and other academic material. I am sure you will enjoy reading this tutorial.
 
