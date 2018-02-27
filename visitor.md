@@ -12,7 +12,7 @@ Visitor pattern lets us use functional programming within object-oriented paradi
 
 We will be using this pattern to visit a particular type of node in our syntax tree and perform an operation.
 
-So let's define a `Visitor` class without further edo.
+So let's define a `Visitor` class without further ado.
 
 ```js
 class Visitor {
