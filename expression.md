@@ -88,3 +88,5 @@ class Grouping extends Expression {
 ```
 
 Woah! That's it. Now that we have define different nodes in our tree, now we just need to create a printer to visit each node in the tree and pretty print the source code as a string.
+
+[Move to the next section](./printer.md)

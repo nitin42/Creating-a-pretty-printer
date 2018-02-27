@@ -25,3 +25,5 @@ class Visitor {
 ```
 
 The `Visitor` class defines methods for visiting a specific node in the syntax tree. Each method accepts a corresponding reference to the expression class (node) which we will visit.
+
+[Move to the next section](./expression.md)
