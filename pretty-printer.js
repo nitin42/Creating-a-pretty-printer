@@ -9,20 +9,20 @@ unambiguous string (opposite of a parser, to be precise).
 
 // Visitor class
 class Visitor {
-  visitBinaryExpr(binary) {}
-  visitUnaryExpr(unary) {}
-  visitLiteralExpr(literal) {}
-  visitGroupingExpr(grouping) {}
+  visitBinaryExpression(binary) {}
+  visitUnaryExpression(unary) {}
+  visitLiteralExpression(literal) {}
+  visitGroupingExpression(grouping) {}
 }
 
 // Base expression class which will be used to derive sub expression classes
 // We will define helpers inside this class so to handle different kinds of expressions
 class Expr {
-  accept(visitor) {}
+  handle(visitor) {}
 }
 
 // Binary expression (1+2)
-class Binary extends Expr {
+class Binary extends Expression {
   constructor(left, operator, right) {
     super()
     this.left = left
@@ -31,56 +31,56 @@ class Binary extends Expr {
   }
 
   // visit the node in AST
-  accept(visitor) {
-    return visitor.visitBinaryExpr(this)
+  handle(visitor) {
+    return visitor.visitBinaryExpression(this)
   }
 }
 
 // Unary expression (-1)
-class Unary extends Expr {
+class Unary extends Expression {
   constructor(operator, right) {
     super()
     this.operator = operator
     this.right = right
   }
 
-  accept(visitor) {
-    return visitor.visitUnaryExpr(this)
+  handle(visitor) {
+    return visitor.visitUnaryExpression(this)
   }
 }
 
 // Literal expression ('12')
-class Literal extends Expr {
+class Literal extends Expression {
   constructor(value) {
     super()
     this.value = value
   }
 
-  accept(visitor) {
-    return visitor.visitLiteralExpr(this)
+  handle(visitor) {
+    return visitor.visitLiteralExpression(this)
   }
 }
 
 // Grouping expression (group 12)
-class Grouping extends Expr {
+class Grouping extends Expression {
   constructor(expression) {
     super()
     this.expression = expression
   }
 
-  accept(visitor) {
-    return visitor.visitGroupingExpr(this)
+  handle(visitor) {
+    return visitor.visitGroupingExpression(this)
   }
 }
 
 // Pretty prints the nodes in our tree as a string
-class Prettier extends Visitor {
+class Printer extends Visitor {
   constructor() {
     super()
   }
 
   visitBinaryExpression(expr) {
-    return this.parenthesize(expr.operator, expr.left, expr.right)
+    return this.prettyPrint(expr.operator, expr.left, expr.right)
   }
 
   visitLiteralExpression(expr) {
@@ -90,14 +90,14 @@ class Prettier extends Visitor {
   }
 
   visitGroupingExpression(expr) {
-    return this.parenthesize('group', expr.expression)
+    return this.prettyPrint('group', expr.expression)
   }
 
   visitUnaryExpression(expr) {
-    return this.parenthesize(expr.operator, expr.right)
+    return this.prettyPrint(expr.operator, expr.right)
   }
 
-  prettify(name, ...exprs) {
+  prettyPrint(name, ...exprs) {
     let arr = []
 
     arr.push('(')
@@ -105,7 +105,7 @@ class Prettier extends Visitor {
 
     for (let expr in exprs) {
       arr.push(' ')
-      arr.push(exprs[expr].accept(this))
+      arr.push(exprs[expr].handle(this))
     }
 
     arr.push(')')
@@ -113,7 +113,7 @@ class Prettier extends Visitor {
   }
 
   render(expr) {
-    return expr.accept(this)
+    return expr.handle(this)
   }
 
   main() {
@@ -131,6 +131,6 @@ class Prettier extends Visitor {
   }
 }
 
-const obj = new Prettier()
+const obj = new Printer()
 
 console.log(obj.main())
