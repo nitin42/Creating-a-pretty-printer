@@ -98,13 +98,13 @@ instance.main() // (* 12 (- 10 20))
 
 ```
 
-YEAH! We have now created a pretty printer. I hope you've learned some cool things about working at a lower abstraction where we learned about -
+YEAH! We have now created a pretty printer. I hope you've learned some cool things -
 
 * Visitor pattern
 
 * What is pretty printing
 
-* Language grammar
+* Defining language grammar
 
 * Traversing the syntax tree
 
