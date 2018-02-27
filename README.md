@@ -6,7 +6,7 @@
 
 This tutorial is about creating a pretty printer in JavaScript to pretty print a very small subset of a grammar, which we will define in later parts. But first of all, what is pretty printing ? I won't throw a very academic definition at you because I want to keep the things simple.
 
-So before I define what is pretty printing, first let's understand what does a parser do ? A parser takes a string of source code and then uses it to construct an abstract syntax tree. Pretty printing is totally opposite of this process. It takes the abtract syntax tree and then produces a string of text from it which validates the syntax of our language.
+So before I define what is pretty printing, first let's understand what does a parser do ? A parser takes a string of source code and then uses it to construct an abstract syntax tree. Pretty printing is totally opposite of this process (approximately). It takes the abtract syntax tree and then produces a string of text from it which validates the syntax of our language.
 
 ## Prerequisite
 
