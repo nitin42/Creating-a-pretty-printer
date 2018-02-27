@@ -20,6 +20,48 @@ We will be using JavaScript.
 
 Casual programmers!
 
+## What we will build ?
+
+We will create a basic printer to pretty print each node in the syntax tree in **Lisp style**.
+
+Considering that we have this syntax tree -
+
+```
+{
+  Expression: {
+    BinaryExpression: {
+      left: {
+        LiteralExpression: {
+          value: 12
+        }
+      },
+      operator: '*',
+      right: {
+        BinaryExpression: {
+          left: {
+            LiteralExpression: {
+              value: 10
+            }
+          },
+          operator: '-',
+          right: {
+            LiteralExpression: {
+              value: 20
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+The printer will output the below code -
+
+```lisp
+(* 12 (- 10 20))
+```
+
 ## Overview
 
 We will be covering:

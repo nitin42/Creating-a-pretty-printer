@@ -79,39 +79,36 @@ class Prettier extends Visitor {
     super()
   }
 
-  visitBinaryExpr(expr) {
+  visitBinaryExpression(expr) {
     return this.parenthesize(expr.operator, expr.left, expr.right)
   }
 
-  visitLiteralExpr(expr) {
-    if (expr.value === null) return 'nil'
+  visitLiteralExpression(expr) {
+    if (expr.value === null) return 'null'
 
     return String(expr.value)
   }
 
-  visitGroupingExpr(expr) {
+  visitGroupingExpression(expr) {
     return this.parenthesize('group', expr.expression)
   }
 
-  visitUnaryExpr(expr) {
+  visitUnaryExpression(expr) {
     return this.parenthesize(expr.operator, expr.right)
   }
 
-  parenthesize(name, ...exprs) {
+  prettify(name, ...exprs) {
     let arr = []
 
     arr.push('(')
-
     arr.push(name)
 
     for (let expr in exprs) {
       arr.push(' ')
-
       arr.push(exprs[expr].accept(this))
     }
 
     arr.push(')')
-
     return arr.join('')
   }
 
